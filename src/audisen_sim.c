@@ -1,6 +1,6 @@
-#include "ams.h"
-#include "define.h"
-#include "frame.h"
+#include "../include/ams.h"
+#include "../include/define.h"
+#include "../include/frame.h"
 #include "stdio.h"
 
 int main() {

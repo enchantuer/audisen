@@ -23,7 +23,7 @@ void createInitFrame(s_song mySong, char* frame){
 	count = addDigitsNumberToString(frame, count, mySong.nTicks, -1);
 	frame[count] = '*';
 	count ++;
-	__int16 checkSum = 0x0;
+	__int128_t checkSum = 0x0;
 	for (int i = 1; i < count-1; i++) {
 		checkSum ^= frame[i];
 	}
@@ -50,7 +50,7 @@ void createTickFrame(s_tick myTick, char* frame){
 		count ++;
 	}
 	frame[count-1] = '*';
-	__int16 checkSum = 0x0;
+	__int128_t checkSum = 0x0;
 	for (int i = 1; i < count-1; i++) {
 		checkSum ^= frame[i];
 	}
