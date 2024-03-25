@@ -6,7 +6,8 @@ set(SOURCES
     ams.c
     amp.c
     frame.c
-#    usb.c
+        audisen_sim.c
+        #    usb.c
 )
 
 set(HEADERS
@@ -14,7 +15,8 @@ set(HEADERS
         ams.h
         define.h
         frame.h
-#        usb.h
+        audisen_usb.c
+        #        usb.h
 )
 
 add_executable(main ${HEADERS} ${SOURCES})
