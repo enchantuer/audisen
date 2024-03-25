@@ -20,6 +20,8 @@ s_song readAMS(char* fileName){
 	char line[MAX_SIZE_LINE];
 	int i = 0;
 	fgets(line, sizeof(line), file);
+	// remove the last \n
+	line[strlen(line)-1] = '\0';
 	strcpy(mySong.title, line);
 	fgets(line, sizeof(line), file);
 	mySong.tpm = 2 * atoi(line);
