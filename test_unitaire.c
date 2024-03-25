@@ -2,5 +2,8 @@
 
 int main() {
     testReadAMP();
+    testReadAMS();
+    testCreateAMS();
+
     return 0;
 }
