@@ -39,7 +39,3 @@ struct song{
 	struct tick tickTab[MAX_NUMBER_TICKS];// Tableau de ticks
 }s_song;
 #endif
-
-
-
-
