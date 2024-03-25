@@ -6,7 +6,7 @@ set(SOURCES
     ams.c
     amp.c
     frame.c
-    usb.c
+#    usb.c
 )
 
 set(HEADERS
@@ -14,7 +14,7 @@ set(HEADERS
         ams.h
         define.h
         frame.h
-        usb.h
+#        usb.h
 )
 
 add_executable(main ${HEADERS} ${SOURCES})
