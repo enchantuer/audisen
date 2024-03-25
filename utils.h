@@ -1,6 +1,9 @@
 
 #ifndef AUDISEN2024_UTILS_H
 #define AUDISEN2024_UTILS_H
+
+#include <math.h>
+
 // AMP
 void trim(char* string, char toTrim);
 
@@ -18,5 +21,7 @@ void formatString(char* string);
 // Frame
 int addDigitsNumberToString(char* string, int start, int number, int nbOfDigits);
 int add2DigitsHexToString(char* string, int start, int hex);
+
+int endWith(const char *str, const char *suffix);
 
 #endif //AUDISEN2024_UTILS_H

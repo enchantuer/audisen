@@ -142,16 +142,6 @@ void createAMS(char* txtFileName, char* amsFileName){
 	fclose(distFile);
 }
 
-int endWith(const char *str, const char *suffix){
-	if (!str || !suffix)
-		return 0;
-	size_t lenstr = strlen(str);
-	size_t lensuffix = strlen(suffix);
-	if (lensuffix >  lenstr)
-		return 0;
-	return strncmp(str + lenstr - lensuffix, suffix, lensuffix) == 0;
-}
-
 int returnNoteIndex(const char *str) {
 	char** corespondanceNote = (char*[]){"C1", "C1#", "D1", "D1#", "E1", "F1", "F1#", "G1", "G1#", "A1", "A1#", "B1",
 		"C2", "C2#", "D2", "D2#", "E2", "F2", "F2#", "G2", "G2#", "A2", "A2#", "B2",
