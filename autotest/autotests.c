@@ -1,9 +1,5 @@
 
-#include "define.h"
 #include "autotests.h"
-#include "ams.h"
-#include "amp.h"
-#include "frame.h"
 #define AMP_NB_TESTS 8
 
 /* Version uniquement pour le \r\n
