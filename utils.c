@@ -2,6 +2,7 @@
 #include "define.h"
 #include "utils.h"
 
+// AMP
 void trim(char* string, char toTrim) {
     int length = strlen(string);
     if (length == 0) {
@@ -81,4 +82,32 @@ void formatString(char* string) {
     removeDuplicateUnderscore(string);
     strlwr(string);
     addAMPExtension(string);
+}
+
+// Frame
+int addDigitsNumberToString(char* string, int start, int number, int nbOfDigits) {
+    if (nbOfDigits == -1) {
+        if (number == 0) {
+            string[start] = '0';
+            return start + 1;
+        }
+        nbOfDigits = 1;
+        int temp = number;
+        while (temp > 9) {
+            temp /= 10;
+            nbOfDigits ++;
+        }
+    }
+    for (int i =0; i < nbOfDigits; i++) {
+        string[start] = number / (int)(pow(10, nbOfDigits-i-1)) % 10 + '0';
+        start ++;
+    }
+    return start;
+}
+int add2DigitsHexToString(char* string, int start, int hex) {
+    char hexString[16] = "0123456789abcdef";
+    string[start] = hexString[hex / 16];
+    string[start + 1] = hexString[hex % 16];
+
+    return start + 2;
 }
