@@ -7,7 +7,7 @@ set(SOURCES
     amp.c
     frame.c
     utils.c
-    Re#    usb.c
+    #    usb.c
 )
 
 set(HEADERS
