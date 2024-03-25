@@ -30,6 +30,7 @@ void createInitFrame(s_song mySong, char* frame){
 	count = add2DigitsHexToString(frame, count, checkSum);
 	frame[count] = '\r';
 	frame[count + 1] = '\n';
+	frame[count + 2] = '\0';
 }
 
 void createTickFrame(s_tick myTick, char* frame){
@@ -56,4 +57,5 @@ void createTickFrame(s_tick myTick, char* frame){
 	count = add2DigitsHexToString(frame, count, checkSum);
 	frame[count] = '\r';
 	frame[count + 1] = '\n';
+	frame[count + 2] = '\0';
 }
