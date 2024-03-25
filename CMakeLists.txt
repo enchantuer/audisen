@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.28)
 
-project(main)
+project(audisen)
 
 set(SOURCES
     ams.c
     amp.c
     frame.c
-    #    usb.c
+    utils.c
+    Re#    usb.c
 )
 
 set(HEADERS
@@ -14,6 +15,7 @@ set(HEADERS
     ams.h
     define.h
     frame.h
+    utils.h
     #        usb.h
 )
 
