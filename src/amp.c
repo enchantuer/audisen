@@ -1,6 +1,5 @@
-
-#include "define.h"
-#include "amp.h"
+#include "../include/define.h"
+#include "../include/amp.h"
 
 FILE* initAMP(char* filename){
     FILE * pf = NULL;

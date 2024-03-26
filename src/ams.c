@@ -1,6 +1,4 @@
-#include "define.h"
-#include "ams.h"
-
+#include "../include/ams.h"
 
 s_song readAMS(char* fileName){
 	s_song mySong;
@@ -83,8 +81,11 @@ void createAMS(char* txtFileName, char* amsFileName){
 	}
 	fprintf(distFile, "\n");
 
-	// TODO change that, make it dynamic
-	int notes[MAX_NUMBER_TICKS][60];
+	int** notes = calloc(MAX_NUMBER_TICKS, sizeof(int*));
+	for (int i = 0; i < MAX_NUMBER_TICKS; i++) {
+		notes[i] = calloc(60, sizeof(int));
+	}
+
 	int i = 0;
 	while (fgets(line, sizeof(line), srcFile)) {
 		int j = 0;
@@ -101,6 +102,7 @@ void createAMS(char* txtFileName, char* amsFileName){
 			int noteIndex = returnNoteIndex(note);
 			if (noteIndex == -1) {
 				printf("Error: Note not found\n");
+				free(notes);
 				return;
 			}
 
@@ -139,6 +141,7 @@ void createAMS(char* txtFileName, char* amsFileName){
 	//
 	// fprintf(distFile, "%s", line);
 
+	free(notes);
 
 	fclose(srcFile);
 	fclose(distFile);
@@ -151,9 +154,17 @@ int returnNoteIndex(const char *str) {
 		"C4", "C4#", "D4", "D4#", "E4", "F4", "F4#", "G4", "G4#", "A4", "A4#", "B4",
 		"C5", "C5#", "D5", "D5#", "E5", "F5", "F5#", "G5", "G5#", "A5", "A5#", "B5"};
 
-	int i = 0;
-	for (i = 0; i < 60; i++) {
+	char** corespondanceNoteHashtagBefore = (char*[]){"C1", "C#1", "D1", "D#1", "E1", "F1", "F#1", "G1", "G#1", "A1", "A#1", "B1",
+		"C2", "C#2", "D2", "D#2", "E2", "F2", "F#2", "G2", "G#2", "A2", "A#2", "B2",
+		"C3", "C#3", "D3", "D#3", "E3", "F3", "F#3", "G3", "G#3", "A3", "A#3", "B3",
+		"C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4",
+		"C5", "C#5", "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5", "B5"};
+
+	for (int i = 0; i < 60; i++) {
 		if (strcmp(str, corespondanceNote[i]) == 0) {
+			return i;
+		}
+		if (strcmp(str, corespondanceNoteHashtagBefore[i]) == 0) {
 			return i;
 		}
 	}

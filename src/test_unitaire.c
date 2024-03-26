@@ -1,4 +1,4 @@
-#include "autotest/autotests.h"
+#include "../include/autotests.h"
 
 int main() {
     testReadAMP();

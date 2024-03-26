@@ -1,5 +1,5 @@
+#include "../include/autotests.h"
 
-#include "autotests.h"
 #define AMP_NB_TESTS 8
 
 /* Version uniquement pour le \r\n
