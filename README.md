@@ -22,5 +22,6 @@ Work with .txt, .ams file
 ### Autotests
 You need to have `bohemian_rhapsody.txt` and `bohemian_rhapsody.ams` file in the build folder, add them to build folder
 ```bash
+cp music/bohemian_rhapsody.txt ./ && cp music/bohemian_rhapsody.ams ./
 ./autotests
 ```
