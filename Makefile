@@ -9,15 +9,14 @@ FTD_LIB=$(FTD2XX)/amd64/ftd2xx.lib
 SOURCE_DIR=src
 INCLUDE_DIR=include
 BUILD_DIR=build
-OBJ_DIR=$(BUILD_DIR)/obj
+OBJ_DIR=$(BUILD_DIR)\obj
 
 OBJS = $(OBJ_DIR)/amp.o $(OBJ_DIR)/ams.o $(OBJ_DIR)/frame.o $(OBJ_DIR)/utils.o
 
 $(BUILD_DIR)/%:
-	@mkdir $(BUILD_DIR) 2> nul || exit 0
+	@mkdir $(BUILD_DIR)\obj
 
 $(OBJ_DIR)%.o: $(SOURCE_DIR)%.c
-	@mkdir $(OBJ_DIR) 2> nul || exit 0
 	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCLUDE_DIR) -I$(FTD2XX)
 
 .PHONY: autotests simulation usb
