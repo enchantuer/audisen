@@ -2,13 +2,13 @@
 
 ### To build
 ```bash
-mingw32-make usb
+make usb
 ```
 ```bash
-mingw32-make simulation
+make simulation
 ```
 ```bash
-mingw32-make autotests
+make autotests
 ```
 
 ### Usb
