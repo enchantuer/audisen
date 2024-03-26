@@ -22,7 +22,7 @@ set(HEADERS
 add_executable(autotests ${SOURCES} ${HEADERS}
         include/autotests.h
         src/autotests.c
-        test/test_unitaire.c
+        src/test_unitaire.c
 )
 
 add_executable(simulation ${SOURCES} ${HEADERS}
