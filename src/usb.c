@@ -1,7 +1,3 @@
-//
-// Created by ISEN on 13/02/2024.
-//
-
 #include "../include/define.h"
 #include "../include/frame.h"
 #include "../include/usb.h"

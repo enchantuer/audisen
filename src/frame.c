@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "frame.h"
-#include "define.h"
+#include "../include/frame.h"
+#include "../include/define.h"
 
 #include <math.h>
 

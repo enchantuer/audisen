@@ -6,8 +6,6 @@
 #include "amp.h"
 #include "frame.h"
 
-
-
 void printAutoTestsResults(char* testName, float mark[], int coeff[], int nTests);
 void testCreateAMS();
 void testReadAMS();

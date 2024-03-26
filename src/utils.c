@@ -1,6 +1,5 @@
-
-#include "define.h"
-#include "utils.h"
+#include "../include/define.h"
+#include "../include/utils.h"
 
 // AMP
 void trim(char* string, char toTrim) {

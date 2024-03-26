@@ -1,6 +1,5 @@
-#include "define.h"
-#include "ams.h"
-
+#include "../include/define.h"
+#include "../include/ams.h"
 
 s_song readAMS(char* fileName){
 	s_song mySong;
