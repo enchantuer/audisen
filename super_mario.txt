@@ -1,0 +1,12 @@
+Super Mario
+72
+
+E4 C, E4 C, A4 C, C5 C
+B4 C, A4 C
+G4 C
+E4 C, A4 C
+B4 C, G4 C
+E4 C, G4 C, A4 C, F4 C
+G4 C, E4 C
+C5 C, D5 C
+B4 C
