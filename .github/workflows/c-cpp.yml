@@ -16,7 +16,7 @@ jobs:
       run: mkdir build && mkdir build/obj
 
     - name: copy music file
-      run: cp music/bohemian_rhapsody.ams build/ && cp music/bohemian_rhapsody.txt build/
+      run: cp music/bohemian_rhapsody.ams ./ && cp music/bohemian_rhapsody.txt ./
       
     - name: make autotests
       run: make autotests
