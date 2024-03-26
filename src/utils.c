@@ -1,4 +1,3 @@
-#include "../include/define.h"
 #include "../include/utils.h"
 
 // AMP
@@ -119,4 +118,15 @@ int add2DigitsHexToString(char* string, int start, int hex) {
     string[start + 1] = hexString[hex % 16];
 
     return start + 2;
+}
+
+int exists(const char *fname)
+{
+    FILE *file;
+    if ((file = fopen(fname, "r")))
+    {
+        fclose(file);
+        return 1;
+    }
+    return 0;
 }

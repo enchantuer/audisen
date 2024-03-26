@@ -1,4 +1,3 @@
-#include "../include/define.h"
 #include "../include/ams.h"
 
 s_song readAMS(char* fileName){
@@ -82,8 +81,11 @@ void createAMS(char* txtFileName, char* amsFileName){
 	}
 	fprintf(distFile, "\n");
 
-	// TODO change that, make it dynamic
-	int notes[MAX_NUMBER_TICKS][60];
+	int** notes = calloc(MAX_NUMBER_TICKS, sizeof(int*));
+	for (int i = 0; i < MAX_NUMBER_TICKS; i++) {
+		notes[i] = calloc(60, sizeof(int));
+	}
+
 	int i = 0;
 	while (fgets(line, sizeof(line), srcFile)) {
 		int j = 0;
@@ -100,6 +102,7 @@ void createAMS(char* txtFileName, char* amsFileName){
 			int noteIndex = returnNoteIndex(note);
 			if (noteIndex == -1) {
 				printf("Error: Note not found\n");
+				free(notes);
 				return;
 			}
 
@@ -138,6 +141,7 @@ void createAMS(char* txtFileName, char* amsFileName){
 	//
 	// fprintf(distFile, "%s", line);
 
+	free(notes);
 
 	fclose(srcFile);
 	fclose(distFile);

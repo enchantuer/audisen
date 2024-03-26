@@ -1,6 +1,7 @@
-
 #ifndef AUDISEN2024_UTILS_H
 #define AUDISEN2024_UTILS_H
+
+#include "define.h"
 
 #include <math.h>
 
@@ -23,5 +24,7 @@ int addDigitsNumberToString(char* string, int start, int number, int nbOfDigits)
 int add2DigitsHexToString(char* string, int start, int hex);
 
 int endWith(const char *str, const char *suffix);
+
+int exists(const char *fname);
 
 #endif //AUDISEN2024_UTILS_H
