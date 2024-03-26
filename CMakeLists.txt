@@ -34,3 +34,6 @@ add_executable(usb ${SOURCES} ${HEADERS}
         include/usb.h
         src/audisen_usb.c
 )
+
+#relative path for the .lib
+target_link_libraries(usb ${CMAKE_SOURCE_DIR}/ftd2xxDriver/amd64/ftd2xx.lib)

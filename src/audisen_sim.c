@@ -26,6 +26,6 @@ int main() {
     createTickFrame(mySong.tickTab[mySong.nTicks-1], line);
     line[strlen(line)-2] = '\0';
     fprintf(f, "%s", line);
-    
+
     return 0;
 }
