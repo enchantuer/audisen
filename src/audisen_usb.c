@@ -106,7 +106,7 @@ int main(int argc, char** argv) {
 
         free(toSend);
 
-        sleep(2);
+        sleep(1);
     }
 
     closeUSB(handle);
