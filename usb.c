@@ -1,6 +1,6 @@
-#include "../include/define.h"
-#include "../include/frame.h"
-#include "../include/usb.h"
+#include "define.h"
+#include "frame.h"
+#include "usb.h"
 
 
 FT_HANDLE initUSB(){

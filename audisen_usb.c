@@ -1,8 +1,8 @@
-#include "../include/usb.h"
-#include "../include/ams.h"
-#include "../include/define.h"
-#include "../include/frame.h"
-#include "../include/amp.h"
+#include "usb.h"
+#include "ams.h"
+#include "define.h"
+#include "frame.h"
+#include "amp.h"
 
 #include <unistd.h>
 

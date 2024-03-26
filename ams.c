@@ -1,4 +1,4 @@
-#include "../include/ams.h"
+#include "ams.h"
 
 // read .ams file and return the s_song object
 s_song readAMS(char* fileName){

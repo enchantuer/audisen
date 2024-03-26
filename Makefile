@@ -1,40 +1,24 @@
 CC=gcc
 CFLAGS=
 LDFLAGS=
+SRC= $(wildcard *.c)
 
-
-FTD2XX=ftd2xxDriver
-FTD_LIB=$(FTD2XX)/amd64/ftd2xx.lib
-
-SOURCE_DIR=src
-INCLUDE_DIR=include
-BUILD_DIR=build
-OBJ_DIR=$(BUILD_DIR)\obj
-
-OBJS = $(OBJ_DIR)/amp.o $(OBJ_DIR)/ams.o $(OBJ_DIR)/frame.o $(OBJ_DIR)/utils.o
-
-$(BUILD_DIR)/%:
-	@mkdir $(BUILD_DIR)\obj 2> nul || exit 0
-
-$(OBJ_DIR)%.o: $(SOURCE_DIR)%.c
-	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCLUDE_DIR) -I$(FTD2XX)
+FTD_LIB=ftd2xx.lib
+INCLUDE= $(wildcard *.h)
 
 .PHONY: autotests simulation usb
 
-autotests: $(BUILD_DIR)/autotests \
-	$(OBJS) \
-	$(OBJ_DIR)/autotests.o \
-	$(OBJ_DIR)/test_unitaire.o
-	$(CC) -o $^ $(LDFLAGS) -I$(INCLUDE_DIR)
+autotests: amp.c ams.c frame.c utils.c \
+	autotests.c \
+	test_unitaire.c
+	$(CC) -o test_autotests $^ $(LDFLAGS)
 
-simulation: $(BUILD_DIR)/simulation \
-	$(OBJS) \
-	$(OBJ_DIR)/audisen_sim.o
-	$(CC) -o $^ $(LDFLAGS) -I$(INCLUDE_DIR)
+simulation: amp.c ams.c frame.c utils.c \
+	audisen_sim.c
+	$(CC) -o test_sim $^ $(LDFLAGS)
 
-usb: $(BUILD_DIR)/usb \
-	 $(OBJS) \
-	 $(OBJ_DIR)/usb.o \
-	 $(OBJ_DIR)/audisen_usb.o \
-	 $(FTD_LIB)
-	$(CC) -o $^ $(LDFLAGS) -I$(INCLUDE_DIR) -I$(FTD2XX)
+usb: amp.c ams.c frame.c utils.c \
+	usb.c \
+	audisen_usb.c \
+	$(FTD_LIB)
+	$(CC) -o test_usb $^ $(LDFLAGS)

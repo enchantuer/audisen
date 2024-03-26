@@ -1,5 +1,5 @@
-#include "../include/define.h"
-#include "../include/amp.h"
+#include "define.h"
+#include "amp.h"
 
 // Open the .amp file
 FILE* initAMP(char* filename){

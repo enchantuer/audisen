@@ -1,4 +1,4 @@
-#include "../include/utils.h"
+#include "utils.h"
 
 // AMP
 // Remove the inputed char from the end and the start of the string (if their is multiple instance of this char, at the end or start, remove all of them)
