@@ -14,6 +14,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: create build folder
       run: mkdir build && mkdir build/obj
+
+    - name: copy music file
+      run: cp music/bohemian_rhapsody.ams build/ && cp music/bohemian_rhapsody.txt build/
       
     - name: make autotests
       run: make autotests
