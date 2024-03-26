@@ -186,8 +186,6 @@ int returnNoteIndex(const char *str) {
 		"C5", "C#5", "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5", "B5"};
 
 	for (int i = 0; i < 60; i++) {
-	// Look for the index of the note into the array
-	for (int i = 0; i < 60; i++) {
 		if (strcmp(str, corespondanceNote[i]) == 0) {
 			return i;
 		}
