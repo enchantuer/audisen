@@ -14,7 +14,7 @@ OBJ_DIR=$(BUILD_DIR)\obj
 OBJS = $(OBJ_DIR)/amp.o $(OBJ_DIR)/ams.o $(OBJ_DIR)/frame.o $(OBJ_DIR)/utils.o
 
 $(BUILD_DIR)/%:
-	@mkdir $(BUILD_DIR)\obj
+	@mkdir $(BUILD_DIR)\obj 2> nul || exit 0
 
 $(OBJ_DIR)%.o: $(SOURCE_DIR)%.c
 	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCLUDE_DIR) -I$(FTD2XX)
