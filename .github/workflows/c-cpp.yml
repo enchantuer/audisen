@@ -12,6 +12,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: clear project
+      run: rm -f build
+
     - name: create build folder
       run: mkdir build && mkdir build/obj
 
