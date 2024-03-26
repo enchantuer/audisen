@@ -247,7 +247,7 @@ void testReadAMP(){
     // TEST 2 : on verifie que le fichier Playlist_autotest.amp s'ouvre bien
     pf = fopen("Playlist_autotest.amp","w");
     if(pf!=NULL){
-    	fprintf(pf,"Bohemian Rhapsody\nKnockin’On Heaven’s Door\nClocks\nImagine\nLet's Eat'@\n[[my song]]");
+    	fprintf(pf,"Bohemian Rhapsody\n\n\r\nKnockin’On Heaven’s Door\nClocks\nImagine\nLet's Eat'@\n[[my song]]");
     	fclose(pf);
     }
 
@@ -268,7 +268,7 @@ void testReadAMP(){
         #endif
     //}
 
-		char songfilename[MAX_SIZE_TITLE];
+		char songfilename[MAX_SIZE_TITLE + 4];
 		while(!feof(pf)){ // read amp file line by line
 			readAMP(pf, songfilename);
 			nbtest ++;
