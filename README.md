@@ -19,17 +19,18 @@ make usb
 ### Usb
 Work with .txt, .amp, .ams file
 ```bash
-.\build\usb.exe <file_name>
+.\test_usb.exe <file_name>
 ```
 
 ### Simulation
 Work with .txt, .ams file
 ```bash
-.\build\simulation.exe <file_name>
+.\test_sim.exe <file_name>
+py play.py
 ```
 
 ### Autotests
 You need to have `bohemian_rhapsody.txt` and `bohemian_rhapsody.ams` file in the root folder of the project
 ```bash
-.\build\autotests.exe
+.\test_autotests.exe
 ```
