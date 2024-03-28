@@ -99,6 +99,19 @@ int endWith(const char *str, const char *suffix){
         return 0;
     return strncmp(str + lenstr - lensuffix, suffix, lensuffix) == 0;
 }
+
+// AMS
+// Check the start a char*
+int startWith(const char *str, const char *prefix){
+    if (!str || !prefix)
+        return 0;
+    size_t lenstr = strlen(str);
+    size_t lenprefix = strlen(prefix);
+    if (lenprefix >  lenstr)
+        return 0;
+    return strncmp(str, prefix, lenprefix) == 0;
+}
+
 // Frame
 // Add digit of variable / fixed number of digit at the given index of a string
 // If nbOfDigits is -1, adapte to the number of digits of the number. Otherwith, add it with a fixed number of digits
