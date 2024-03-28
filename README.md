@@ -26,6 +26,12 @@ Work with .txt, .amp, .ams file
 Work with .txt, .ams file
 ```bash
 .\test_sim.exe <file_name>
+```
+```bash
+py play.py
+```
+```bash
+.\test_sim.exe <file_name>
 py play.py
 ```
 
