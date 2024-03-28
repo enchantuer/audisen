@@ -18,9 +18,9 @@ Work with .txt, .amp, .ams file
 ```
 
 ### Simulation
-Work with .txt, .ams file
+Work with .txt, .ams file, add -play-python if you have the python file named play.py and you have python installed on your computer, (the program run the py command you can change it in python.exe if you want)
 ```bash
-.\build\simulation.exe <file_name>
+.\build\simulation.exe <file_name> (-play-python)
 ```
 
 ### Autotests

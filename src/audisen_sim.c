@@ -146,7 +146,7 @@ int main(int argc, char** argv) {
             if (startWith(argv[2], "-play-python")) {
                 char* pythonCommand = calloc(strlen(fileNames[i]) + 25, sizeof(char));
 
-                strcat(pythonCommand, "py play.py ");
+                strcat(pythonCommand, "python.exe play.py ");
                 strcat(pythonCommand, fileNames[i]);
 
                 system(pythonCommand);
