@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
             frmFileName[strlen(frmFileName) - 1] = 'm';
             frmFileName[strlen(frmFileName)] = '\0';
 
-            f = fopen(frmFileName, "w");
+            f = fopen(frmFileName, "wb");
 
             free(frmFileName);
         } else if (endWith(argv[1], ".txt")) {
@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
             frmFileName[strlen(frmFileName) - 1] = 'm';
             frmFileName[strlen(frmFileName)] = '\0';
 
-            f = fopen(frmFileName, "w");
+            f = fopen(frmFileName, "wb");
 
             free(amsFileName);
             free(frmFileName);
@@ -52,28 +52,19 @@ int main(int argc, char** argv) {
     } else {
         mySong = readAMS("music/bohemian_rhapsody.ams");
 
-        f = fopen("music/bohemian_rhapsody.frm", "w");
+        f = fopen("music/bohemian_rhapsody.frm", "wb");
     }
 
 
     char line[INIT_FRAME_MAX_SIZE];
 
     createInitFrame(mySong, line);
-    line[strlen(line)-2] = '\n';
-    line[strlen(line)-1] = '\0';
     fprintf(f, "%s", line);
 
-    for (int i = 0; i < mySong.nTicks-1; i++) {
+    for (int i = 0; i < mySong.nTicks; i++) {
         createTickFrame(mySong.tickTab[i], line);
-        //remove the \r
-        line[strlen(line)-2] = '\n';
-        line[strlen(line)-1] = '\0';
         fprintf(f, "%s", line);
     }
-
-    createTickFrame(mySong.tickTab[mySong.nTicks-1], line);
-    line[strlen(line)-2] = '\0';
-    fprintf(f, "%s", line);
 
     return 0;
 }
