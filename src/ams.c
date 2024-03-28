@@ -5,13 +5,19 @@ struct song initSong() {
 	mySong.title[0] = '\0';
 	mySong.tpm = 0;
 	mySong.nTicks = 0;
+	for (int i = 0; i < MAX_NUMBER_TICKS; i++) {
+		mySong.tickTab[i].accent = 0;
+		for (int j = 0; j < 4; j++) {
+			mySong.tickTab[i].note[j] = 0;
+		}
+	}
 
 	return mySong;
 }
 
 // read .ams file and return the s_song object
 s_song readAMS(char* fileName){
-	s_song mySong = initSong();
+	s_song mySong;
 	// Check file extension
 	if (!endWith(fileName, ".ams")){
 		printf("Error: File is not a .ams file\n");
