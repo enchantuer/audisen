@@ -121,7 +121,7 @@ int main(int argc, char** argv) {
 
         fclose(f);
 
-        char* pythonCommand = calloc(100, sizeof(char));
+        char* pythonCommand = calloc(strlen(fileNames[i]) + 25, sizeof(char));
 
         strcat(pythonCommand, "python.exe ..\\play.py ");
         strcat(pythonCommand, fileNames[i]);
