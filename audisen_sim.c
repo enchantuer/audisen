@@ -122,7 +122,7 @@ int main(int argc, char** argv) {
         fclose(f);
 
         if (argc >= 3) {
-            if (startWith(argv[2], "play-python")) {
+            if (startWith(argv[2], "-play-python")) {
                 char* pythonCommand = calloc(strlen(fileNames[i]) + 25, sizeof(char));
 
                 strcat(pythonCommand, "py .\\play.py ");
