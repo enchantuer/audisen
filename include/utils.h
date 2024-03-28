@@ -25,6 +25,8 @@ int add2DigitsHexToString(char* string, int start, int hex);
 
 int endWith(const char *str, const char *suffix);
 
+int startWith(const char *str, const char *prefix);
+
 int exists(const char *fname);
 
 #endif //AUDISEN2024_UTILS_H
