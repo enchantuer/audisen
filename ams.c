@@ -6,6 +6,12 @@ struct song initSong() {
 	mySong.title[0] = '\0';
 	mySong.tpm = 0;
 	mySong.nTicks = 0;
+	for (int i = 0; i < MAX_NUMBER_TICKS; i++) {
+		mySong.tickTab[i].accent = 0;
+		for (int j = 0; j < 4; j++) {
+			mySong.tickTab[i].note[j] = 0;
+		}
+	}
 
 	return mySong;
 }
