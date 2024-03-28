@@ -1,8 +1,18 @@
 #include "ams.h"
 
+
+struct song initSong() {
+	s_song mySong;
+	mySong.title[0] = '\0';
+	mySong.tpm = 0;
+	mySong.nTicks = 0;
+
+	return mySong;
+}
+
 // read .ams file and return the s_song object
 s_song readAMS(char* fileName){
-	s_song mySong;
+	s_song mySong = initSong();
 	// Check file extension
 	if (!endWith(fileName, ".ams")){
 		printf("Error: File is not a .ams file\n");

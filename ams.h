@@ -3,6 +3,9 @@
 
 #include "define.h"
 
+
+struct song initSong();
+
 struct song readAMS(char* fileName);
 void createAMS(char* txtFileName, char* amsFileName);
 
