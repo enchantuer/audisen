@@ -45,6 +45,16 @@ int main(int argc, char** argv) {
 
         } else if (endWith(argv[1], ".amp")) {
             FILE* file = initAMP(argv[1]);
+            if (file == NULL) {
+                printf("File not found : %s\n", argv[1]);
+                free(mySong);
+                for (int i = 0; i < 4; i++) {
+                    free(fileNames[i]);
+                }
+                free(fileNames);
+                return 0;
+            }
+
             for (int i = 0; i < 4; i++) {
                 char song_filename[MAX_SIZE_TITLE];
                 readAMP(file, song_filename);
@@ -67,9 +77,12 @@ int main(int argc, char** argv) {
                     if (exists(txt_filename)) {
                         createAMS(txt_filename, song_filename_with_folder);
                     } else {
-                        printf("Error: File not found\n");
                         free(mySong);
+                        for (int j = 0; j < 4; j++) {
+                            free(fileNames[j]);
+                        }
                         free(fileNames);
+
                         return 1;
                     }
                 }
@@ -90,7 +103,11 @@ int main(int argc, char** argv) {
         } else {
             printf("Error: File is not an .ams or .txt file\n");
             free(mySong);
+            for (int j = 0; j < 4; j++) {
+                free(fileNames[j]);
+            }
             free(fileNames);
+
             return 1;
         }
     } else {
@@ -101,7 +118,11 @@ int main(int argc, char** argv) {
     if (mySong[0].nTicks == 0) {
         printf("Error: exit, music do not have any tick\n");
         free(mySong);
+        for (int j = 0; j < 4; j++) {
+            free(fileNames[j]);
+        }
         free(fileNames);
+
         return 1;
     }
 
@@ -136,6 +157,9 @@ int main(int argc, char** argv) {
     }
 
     free(mySong);
+    for (int j = 0; j < 4; j++) {
+        free(fileNames[j]);
+    }
     free(fileNames);
 
     return 0;

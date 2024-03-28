@@ -135,6 +135,9 @@ void createAMS(char* txtFileName, char* amsFileName){
 			// If the note is not in our 60 note, then throw an error
 			if (noteIndex == -1) {
 				printf("Error: Note not found\n");
+				for (int j = 0; j < MAX_NUMBER_TICKS; j++) {
+					free(notes[j]);
+				}
 				free(notes);
 				return;
 			}
@@ -180,7 +183,11 @@ void createAMS(char* txtFileName, char* amsFileName){
 	// fprintf(distFile, "%s", line);
 
 	// Close the files
+	for (int j = 0; j < MAX_NUMBER_TICKS; j++) {
+		free(notes[j]);
+	}
 	free(notes);
+
 
 	fclose(srcFile);
 	fclose(distFile);
