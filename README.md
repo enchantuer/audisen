@@ -27,13 +27,6 @@ Work with .txt, .ams file, add -play-python if you have the python file named pl
 ```bash
 .\test_sim.exe <file_name> [-play-python]
 ```
-```bash
-py play.py (<file_name>)
-```
-```bash
-.\test_sim.exe <file_name>
-py play.py (<file_name>)
-```
 
 ### Autotests
 You need to have `bohemian_rhapsody.txt` and `bohemian_rhapsody.ams` file in the root folder of the project
