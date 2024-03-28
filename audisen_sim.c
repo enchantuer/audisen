@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
     }
     int nbSong = 0;
 
-    if (argc == 2) {
+    if (argc >= 2) {
         if (endWith(argv[1], ".txt")) {
             char* amsFileName = malloc(sizeof(char) * (strlen(argv[1]) + 1));
             strcpy(amsFileName, argv[1]);
@@ -125,7 +125,7 @@ int main(int argc, char** argv) {
             if (startWith(argv[2], "play-pyhton")) {
                 char* pythonCommand = calloc(strlen(fileNames[i]) + 25, sizeof(char));
 
-                strcat(pythonCommand, "py ..\\play.py ");
+                strcat(pythonCommand, "py .\\play.py ");
                 strcat(pythonCommand, fileNames[i]);
 
                 system(pythonCommand);
