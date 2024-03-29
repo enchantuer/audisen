@@ -88,7 +88,7 @@ int main(int argc, char** argv) {
                 }
             }
         } else {
-            printf("Error: File is not an .ams or .txt file\n");
+            printf("Error: File is not an .ams, .amp or .txt file\n");
             free(mySong);
             free(fileNames);
             return 1;
