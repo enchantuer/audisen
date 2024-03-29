@@ -12,6 +12,8 @@ int isNumeric(char c);
 int isAlpha(char c);
 int isAlphanumeric(char c);
 
+void toLowerCase(char* string);
+
 void replaceSpecialChar(char* string);
 void removeDuplicateUnderscore(char* string);
 

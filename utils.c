@@ -37,6 +37,15 @@ int isAlpha(char c) {
 int isAlphanumeric(char c) {
     return isNumeric(c) ||isAlpha(c);
 }
+// transform upper case letter into lower case
+void toLowerCase(char* string) {
+    int length = strlen(string);
+    for (int i = 0; i < length; i++) {
+        if (string[i] >= 'A' && string[i] <= 'Z') {
+            string[i] = string[i] + ('a' - 'A');
+        }
+    }
+}
 // Replace all char that are not alphanumeric by an '_'
 void replaceSpecialChar(char* string) {
     int length = strlen(string);
@@ -85,7 +94,7 @@ void formatString(char* string) {
     replaceSpecialChar(string);
     trim(string, '_');
     removeDuplicateUnderscore(string);
-    strlwr(string);
+    toLowerCase(string);
     addAMPExtension(string);
 }
 // AMS
