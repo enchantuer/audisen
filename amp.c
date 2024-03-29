@@ -25,6 +25,17 @@ void readAMP(FILE* pf, char * song_filename){
         strcpy(song_filename, buffer);
         // Format it so it follow the sandard and have the file extension ().ams
         formatString(song_filename);
+		if (!exists(song_filename)) {
+            // Check if the song in .txt exist other
+            char txt_filename[100];
+            strcpy(txt_filename, song_filename);
+            txt_filename[strlen(txt_filename) - 4] = '\0';
+            strcat(txt_filename, ".txt");
+			// If it exist, create .ams file based on .txt
+            if (exists(txt_filename)) {
+                createAMS(txt_filename, song_filename);
+            }
+        }
         // Make sure that the end of line has been reach so that next time it read the next song name
         while (!(feof(pf) || buffer[strlen(buffer) - 1] == '\n')) {
             fgets(buffer, MAX_SIZE_TITLE + 1, pf);

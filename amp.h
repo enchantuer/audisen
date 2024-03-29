@@ -2,6 +2,7 @@
 #define AUDISEN2024_AMP_H
 
 #include "define.h"
+#include "ams.h"
 
 
 FILE* initAMP(char* filename);
